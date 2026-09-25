@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/nombreGuerro"
+        android:text="@string/nombreGuerrero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/usuarioText"
+        android:hint="@string/introduceNomhre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nombreGuerro">
+
+    </EditText>
+
+
+
+    <TextView
+        android:id="@+id/titulo_spiner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Raza"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usuarioText"
+        />
+    <Spinner
+        android:id="@+id/spinnerRaza"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:entries="@array/razas_array"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titulo_spiner"
+
+        />
+
+    <TextView
+        android:id="@+id/faccion"
+        android:text="@string/faccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerRaza"
+
+        />
+    <RadioGroup
+        android:id="@+id/selectFaciones"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/faccion"
+        >
+        <RadioButton
+            android:id="@+id/comunidadAnillo"
+            android:text="Comunidad del Anillo "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+
+            />
+        <RadioButton
+            android:id="@+id/mordor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Huestes de Mordor" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/habilidades"
+        android:text="Habilidades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectFaciones"
+        />
+
+    <CheckBox
+        android:id="@+id/sigilo"
+        android:text="Sigilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/habilidades"
+        />
+
+    <CheckBox
+        android:id="@+id/combate"
+        android:text="Combate con espada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sigilo"
+        />
+
+    <ImageButton
+        android:id="@+id/boton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/combate" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

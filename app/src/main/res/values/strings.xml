@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">lab2</string>
+    <string name="nombreGuerrero">Nombre del Guerrero:</string>
+    <string name="introduceNomhre">Introduce un nombre</string>
+    <string name="faccion">Facion</string>
+    <!-- Spinner de razas  -->
+    <string-array name="razas_array">
+        <item>Hobbit</item>
+        <item>Elfo</item>
+        <item>Enano</item>
+        <item>Humanos</item>
+    </string-array>
+</resources>
