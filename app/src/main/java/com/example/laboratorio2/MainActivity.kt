@@ -86,27 +86,25 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+        // 1. Validar si el campo de nombre está vacío al pulsar el botón
+        if (nombre.text.isEmpty()) {
+            // Esto hace que aparezca el icono de alerta (!) y el globo de texto con el error en la pantalla
+            nombre.error = "Tu héroe no tiene nombre"
 
-        nombre.setOnFocusChangeListener{view,hasfocus->
+            // Esto mueve el cursor automáticamente al campo del nombre para que el usuario lo vea
+            nombre.requestFocus()
 
-            if (!hasfocus)
-            {
-                if(nombre.text.isEmpty()) nombre.error="Tu hereo no tiene nombre"
-
-
-            }
-
-
+            // Un aviso extra en la pantalla
 
         }
-
-        btnImg.setOnClickListener{
-
+        btnImg.setOnClickListener {
 
 
-            Toast.makeText(this, "El personaje ha sido creado ", Toast.LENGTH_SHORT).show()
 
+            // 2. Si el nombre SÍ está lleno, el código continúa de forma normal:
+            Toast.makeText(this, "El personaje ha sido creado", Toast.LENGTH_SHORT).show()
         }
+
 
 
 
