@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
 import android.widget.Toast
@@ -86,23 +87,35 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-        // 1. Validar si el campo de nombre está vacío al pulsar el botón
-        if (nombre.text.isEmpty()) {
-            // Esto hace que aparezca el icono de alerta (!) y el globo de texto con el error en la pantalla
-            nombre.error = "Tu héroe no tiene nombre"
 
-            // Esto mueve el cursor automáticamente al campo del nombre para que el usuario lo vea
-            nombre.requestFocus()
-
-            // Un aviso extra en la pantalla
+        val logDePersonaje={personaje: String->
+            Log.d("Personaje","Se ha creado el personaje-> $personaje")
 
         }
+
+
         btnImg.setOnClickListener {
 
+            if (nombre.text.isEmpty()) {
+
+                nombre.error = "Tu héroe no tiene nombre"
+                nombre.requestFocus()
+
+            }else{
+                val listaHab=mutableListOf<String>()
+                if(Sigilo.isChecked) listaHab.add("Sigilo")
+                if(Combate.isChecked) listaHab.add("Combate con Espada")
+                val faccion = findViewById<RadioButton>(Facciones.checkedRadioButtonId).text.toString()
+
+                val textoHabilidad=if(listaHab.isNotEmpty())listaHab.toString() else "Sin habilidades"
+
+                logDePersonaje("Nombre ${nombre.text}| Raza ${Raza.selectedItem} | Habilidades: ${textoHabilidad} Faccion: ${faccion}");
+
+                Toast.makeText(this, "El personaje ha sido creado", Toast.LENGTH_SHORT).show()
+            }
 
 
-            // 2. Si el nombre SÍ está lleno, el código continúa de forma normal:
-            Toast.makeText(this, "El personaje ha sido creado", Toast.LENGTH_SHORT).show()
+
         }
 
 
